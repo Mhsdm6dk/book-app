@@ -1,0 +1,333 @@
+{
+  "book": [
+    {
+      "id": 1,
+      "name": "Chiến Binh Cầu Vồng",
+      "image": "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/600x600/9df78eab33525d08d6e5fb8d27136e95/i/m/image_195509_1_36366.jpg",
+      "price": 10000,
+      "describes": "2020",
+      "inventory": 3,
+      "category_name": "truyện tranh"
+    },
+    {
+      "id": 2,
+      "name": "Sách Hóa Học 10",
+      "image": "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/600x600/9df78eab33525d08d6e5fb8d27136e95/3/3/3300000001135.jpg",
+      "price": 16000,
+      "describes": "Sách hóa học 10",
+      "inventory": 20,
+      "category_name": "sách giáo khoa"
+    },
+    {
+      "id": 3,
+      "name": "Tiếng Anh 10 - Tập 1",
+      "image": "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/600x600/9df78eab33525d08d6e5fb8d27136e95/i/m/image_233253.jpg",
+      "price": 30000,
+      "describes": "Sách được biên soạn dựa trên cơ sở những kinh nghiệm thực tiễn của việc dạy tiếng Anh trung học phổ thông ở Việt Nam với sự hợp tác chặt chẽ về chuyên môn và kĩ thuật của Tập đoàn Xuất bản Giáo dục Pearson và Hội đồng Anh",
+      "inventory": 30,
+      "category_name": "sách giáo khoa"
+    },
+    {
+      "id": 5,
+      "name": "Tỷ Phú Bán Giày",
+      "image": "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/600x600/9df78eab33525d08d6e5fb8d27136e95/i/m/image_230104.jpg",
+      "price": 18000,
+      "describes": "Tỷ phú bán giày không phải là một cuốn sách dạy cách làm giàu tuần tự theo các bước 1 - 2 - 3,... cũng không hẳn là một cuốn sách chỉ dẫn bí quyết kinh doanh hay nghệ thuật quản lý",
+      "inventory": 50,
+      "category_name": "sách kinh tế"
+    },
+    {
+      "id": 6,
+      "name": "Ngữ Văn 12 - tập 1",
+      "image": "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_242957.jpg",
+      "price": 13000,
+      "describes": "",
+      "inventory": 20,
+      "category_name": "sách giáo khoa"
+    },
+    {
+      "id": 7,
+      "name": "Vật Lí 12 (2021)",
+      "image": "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_242953.jpg",
+      "price": 17000,
+      "describes": "",
+      "inventory": 30,
+      "category_name": "sách giáo khoa"
+    },
+    {
+      "id": 8,
+      "name": "Lịch Sử 12 (2021)",
+      "image": "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_242959.jpg",
+      "price": 16000,
+      "describes": "",
+      "inventory": 40,
+      "category_name": "sách giáo khoa"
+    },
+    {
+      "id": 9,
+      "name": "Hình Học 12 (2021)",
+      "image": "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_242952.jpg",
+      "price": 7000,
+      "describes": "",
+      "inventory": 35,
+      "category_name": "sách giáo khoa"
+    },
+    {
+      "id": 10,
+      "name": "Công nghệ 12 (2021)",
+      "image": "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_242956.jpg",
+      "price": 16000,
+      "describes": "",
+      "inventory": 26,
+      "category_name": "sách giáo khoa"
+    },
+    {
+      "id": 11,
+      "name": "Tin học 6",
+      "image": "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_237969.jpg",
+      "price": 16000,
+      "describes": "",
+      "inventory": 26,
+      "category_name": "sách giáo khoa"
+    },
+    {
+      "id": 12,
+      "name": "Tiếng anh 3",
+      "image": "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_233237.jpg",
+      "price": 16000,
+      "describes": "",
+      "inventory": 26,
+      "category_name": "sách giáo khoa"
+    },
+    {
+      "id": 13,
+      "name": "Bài tập toán 6",
+      "image": "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_242712.jpg",
+      "price": 16000,
+      "describes": "",
+      "inventory": 26,
+      "category_name": "sách giáo khoa"
+    },
+    {
+      "id": 14,
+      "name": "Tiếng việt 1",
+      "image": "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_242756.jpg",
+      "price": 16000,
+      "describes": "",
+      "inventory": 26,
+      "category_name": "sách giáo khoa"
+    },
+    {
+      "id": 15,
+      "name": "Tiếng việt 2",
+      "image": "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_242725.jpg",
+      "price": 16000,
+      "describes": "",
+      "inventory": 26,
+      "category_name": "sách giáo khoa"
+    },
+    {
+      "id": 16,
+      "name": "Tiếng anh 7",
+      "image": "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_195509_1_43115_1.jpg",
+      "price": 16000,
+      "describes": "",
+      "inventory": 26,
+      "category_name": "sách giáo khoa"
+    },
+    {
+      "id": 17,
+      "name": "Dấu chân trên cát",
+      "image": "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_195509_1_12629_1.jpg",
+      "price": 16000,
+      "describes": "",
+      "inventory": 26,
+      "category_name": "tiểu thuyết"
+    },
+    {
+      "id": 18,
+      "name": "Khoa học tự nhiên 6",
+      "image": "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_242567.jpg",
+      "price": 16000,
+      "describes": "",
+      "inventory": 26,
+      "category_name": "sách giáo khoa"
+    },
+    {
+      "id": 19,
+      "name": "Sinh học 12",
+      "image": "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_242955.jpg",
+      "price": 16000,
+      "describes": "",
+      "inventory": 26,
+      "category_name": "sách giáo khoa"
+    },
+    {
+      "id": 20,
+      "name": "Lịch sử & Địa lý 4",
+      "image": "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_242826.jpg",
+      "price": 16000,
+      "describes": "",
+      "inventory": 26,
+      "category_name": "sách giáo khoa"
+    }
+  ],
+  "user": [
+    {
+      "id": 1,
+      "username": "hanhtshh",
+      "password": "123456",
+      "admin": "yes"
+    },
+    {
+      "id": 2,
+      "username": "dangquoccuong",
+      "password": "123456",
+      "admin": "no",
+      "order": []
+    },
+    {
+      "id": 3,
+      "username": "levanhieu",
+      "password": "123456",
+      "admin": "no",
+      "order": [
+        {
+          "ten": "Tiếng Anh 10 - Tập 1",
+          "gia": "30000",
+          "image": "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/600x600/9df78eab33525d08d6e5fb8d27136e95/i/m/image_233253.jpg",
+          "soluong": 6
+        },
+        {
+          "ten": "Ngữ Văn 12 - tập 1",
+          "gia": "13000",
+          "image": "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_242957.jpg",
+          "soluong": 2
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "username": "tranngocanh",
+      "password": "123456",
+      "admin": "no",
+      "order": []
+    },
+    {
+      "id": 5,
+      "username": "maithitragiang",
+      "password": "123456",
+      "admin": "no",
+      "order": []
+    },
+    {
+      "username": "nguyenvanhanh",
+      "password": "123456",
+      "admin": "no",
+      "id": 6,
+      "order": []
+    },
+    {
+      "username": "b19dccn221",
+      "password": "123456",
+      "admin": "no",
+      "id": 7,
+      "order": []
+    },
+    {
+      "username": "toilahanh",
+      "password": "123456",
+      "admin": "no",
+      "id": 8,
+      "order": []
+    },
+    {
+      "username": "b19dccn286",
+      "password": "123456",
+      "admin": "no",
+      "id": 9,
+      "order": []
+    },
+    {
+      "username": "b19dccn289",
+      "password": "123456",
+      "admin": "no",
+      "id": 10,
+      "order": []
+    },
+    {
+      "username": "b19dccn222",
+      "password": "123",
+      "admin": "no",
+      "id": 11,
+      "order": [
+        {
+          "ten": "Tiếng Anh 10 - Tập 1",
+          "gia": "30000",
+          "image": "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/600x600/9df78eab33525d08d6e5fb8d27136e95/i/m/image_233253.jpg",
+          "soluong": 3
+        },
+        {
+          "ten": "Vật Lí 12 (2021)",
+          "gia": "17000",
+          "image": "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_242953.jpg",
+          "soluong": 1
+        }
+      ]
+    },
+    {
+      "username": "no",
+      "password": "no",
+      "order": [
+        {
+          "ten": "Tiếng Anh 10 - Tập 1",
+          "gia": "30000",
+          "image": "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/600x600/9df78eab33525d08d6e5fb8d27136e95/i/m/image_233253.jpg",
+          "soluong": 4
+        }
+      ],
+      "admin": "no",
+      "id": 12
+    },
+    {
+      "username": "no",
+      "password": "no",
+      "order": [
+        {
+          "ten": "Tiếng Anh 10 - Tập 1",
+          "gia": "30000",
+          "image": "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/600x600/9df78eab33525d08d6e5fb8d27136e95/i/m/image_233253.jpg",
+          "soluong": 4
+        },
+        {
+          "ten": "Ngữ Văn 12 - tập 1",
+          "gia": "13000",
+          "image": "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_242957.jpg",
+          "soluong": 1
+        }
+      ],
+      "admin": "no",
+      "id": 13
+    },
+    {
+      "username": "no",
+      "password": "no",
+      "order": [
+        {
+          "ten": "Tiếng Anh 10 - Tập 1",
+          "gia": "30000",
+          "image": "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/600x600/9df78eab33525d08d6e5fb8d27136e95/i/m/image_233253.jpg",
+          "soluong": 4
+        },
+        {
+          "ten": "Ngữ Văn 12 - tập 1",
+          "gia": "13000",
+          "image": "https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_242957.jpg",
+          "soluong": 2
+        }
+      ],
+      "admin": "no",
+      "id": 14
+    }
+  ]
+}

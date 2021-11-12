@@ -1,0 +1,276 @@
+/* header__head */
+.header{
+    height: 140px;
+    background: url(./image/head_background.jpg);
+    background-repeat: no-repeat;
+}
+.dau{
+    background: url(./image/Hellolovely.png);
+	background-repeat: no-repeat;
+	background-size: 250px;
+	background-position:10px 50px;
+	height: 130px;
+	border: 0px;
+}
+.header__head{
+    display: inline-flex;   
+    flex-wrap: nowrap;
+    height: 30%;
+
+}
+@keyframes fadeIn{
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}
+.header__headtext{
+    position: relative;
+    display: inline-flex;
+    list-style: none;
+    bottom: 15px;
+    right: 20px;
+    font-weight: 500;
+}
+.header__headtext-text{
+    margin-left:4px ;
+    font-size: 16px;
+    font-style: italic;
+    cursor: default;
+}
+.header__headicon{
+    margin-left: 350px;
+    display: inline-flex;
+    list-style: none;
+}
+.form__button{
+    cursor: pointer;
+    background-color:white;
+    border:none;
+    font-size: 16px;
+    margin-left:10px ;
+}
+.icon{
+    font-size: 25px;
+}
+.form__inputform{
+    width: 300px;
+    position: fixed;
+    border-radius: 4px;
+    border-style: groove;
+    background-color: rgb(255, 255, 255);
+    top:120px;
+    right: 480px;
+    z-index: 3;
+    animation: fadeIn linear 0.3s;
+}
+.form__inputform-element{
+    margin-left:10px ;
+    margin-bottom: 20px;
+}
+.form__inputform-text{
+    width: 270px;
+    height: 30px;
+    border-radius: 4px;
+}
+.form__inputform-text:focus{
+    border: 2px solid #65c2ee;
+}
+.form__inputform-button{
+    border-radius: 15px;
+    border: none;
+    margin:15px 0px 0px 62px;
+    width: 150px;
+    height: 35px;
+    cursor: pointer;
+}
+.form__inputform-button2{
+    border-radius: 15px;
+    background-color: white;
+    color: #d03e43;
+    border: 1px solid #d03e43;
+    margin:15px 0px 0px 62px;
+    width: 150px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.spaceline{
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+.form__header{
+    display: inline-flex;
+}
+.form__header-link{
+    position: relative;
+    color: red;
+    cursor: pointer;
+    left:120px;
+    top:20px;
+}
+/* header__search */
+.header__searchborder{
+    display: inline-flex;
+    position: relative;
+    left: 355px;
+    top:30px;
+    border-radius: 4px;
+    border: 2px solid black;
+}
+.header__search-input{
+    height: 25px;
+    border:none;
+    width:500px;
+}
+.header__search-button{
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* css cho giỏ hàng */
+.dong{
+    outline: none;
+    background: white;
+    border: none;
+    color: red;
+    cursor: pointer;
+    position: relative;
+    left: 170px;
+    top: 5px;
+}
+.giohang__sach{
+    width: 40px;
+    height: 40px;
+}
+.giohang__button-xoa{
+    margin-left: 50px;
+}
+.giohang__soluong{
+    margin-left: 20px;
+}
+.giohang_title{
+    position: relative;
+    left: 10px;
+    bottom: 15px;
+}
+.formthanhtoan{
+    position: fixed;
+    background-color: #f1f1f2;
+    right: 250px;
+    width: 750px;
+    height: 400px;
+    z-index: 3;
+    border-radius: 4px;
+    border: 2px solid #ced4da;
+}
+.thanhtoan__inputtext{
+    width: 450px;
+    border-radius:4px ;
+    height: 25px;
+    border: 1px solid #ced4da;
+}
+.quanlydonhang{
+    cursor: pointer;
+    position: relative;
+    top:10px;
+    border-radius: 3px;
+    left: 370px;
+    width: 150px;
+    height: 20px;
+    border: 2px solid black;
+    padding: 0px 5px 5px 5px;
+}
+/* body */
+.body{
+    display: flex;
+    background-color:#f1f1f2;
+}
+.body__danhmuc{
+    width: 16.6667%;
+    background-color: #f1f1f2;
+}
+.body__danhmuc-form{
+    margin: 12px;
+    border-radius: 4px;
+    background-color:white;
+}
+.body__danhmuc-list{
+    list-style: none;
+    
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.body__danhmuc-item{
+    border-top: 1px solid rgb(196, 196, 196);
+    padding-top: 8px;
+    height: 35px;
+    cursor: pointer;
+}
+.body__danhmuc-item:hover .fas.fa-chevron-right{
+    display: block;
+    position: relative;
+    left: 150px;
+    bottom: 15px;
+}
+.fas.fa-chevron-right{
+    display: none;
+    
+}
+.body__itembook{
+    width: 83.3333%;
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+.body__itembook-item{
+    text-align: center;
+    width: 20%;
+}
+.body__itembook-item-image{
+    margin-top: 12px;
+    background-repeat: no-repeat;
+    background-size: 150px;
+    width: 150px;
+    height: 150px;
+}
+.body__itembook-item-box:hover{
+    border: 1px solid black;
+    margin: 11px;
+    border-style: groove;
+}
+.body__itembook-item-box{
+    margin: 12px;
+    background-color: white;
+    border-radius: 4px;
+    padding-bottom:10px ;
+}
+.them{
+    cursor: pointer;
+    border: none;
+    background: white;
+}
+.mua{
+    cursor: pointer;
+    margin-left: 50px;
+}
+/* foot */
+.chan{
+    display: inline-flex;
+}
+.map{
+    margin: 10px;
+    border: 1px solid black ;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.chan__thongtinlienhe{
+    margin-left: 10px;
+}
+.chan__thongtinlienhe-link-messenger{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
