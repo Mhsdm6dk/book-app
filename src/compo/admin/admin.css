@@ -26,17 +26,21 @@
     cursor: pointer;
 }
 .them{
-    color: red;
+    color: #c92127;
+    font-weight: 500;
 }
 .them1{
     position: absolute;
     bottom: 15px;
     right: 15px;
+    
 }
 .them2{
     position: absolute;
     bottom: 15px;
     left: 15px;
+    font-weight: bold;
+    font-size: 15px;
 }
 .quanlidonhang{
     background:white;

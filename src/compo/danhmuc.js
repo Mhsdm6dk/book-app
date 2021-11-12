@@ -1,8 +1,41 @@
-import React, { memo } from "react";
+import React, { memo,useState,useEffect } from "react";
+import axios from "axios";
 import {BrowserRouter as Router,Route, Switch,Link } from "react-router-dom";
 import Adminbookshow from "./admin/adminbookshow";
 import Bookshow from "./bookshow";
 function Danhmuc(props){
+    const [category,setCategory]= useState([]);
+    // const [themdanhmuc,setThemdanhmuc]= useState(false);
+    function xoa_dau(str) {
+        str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
+        str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
+        str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i");
+        str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
+        str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
+        str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
+        str = str.replace(/đ/g, "d");
+        str = str.replace(/À|Á|Ạ|Ả|Ã|Â|Ầ|Ấ|Ậ|Ẩ|Ẫ|Ă|Ằ|Ắ|Ặ|Ẳ|Ẵ/g, "A");
+        str = str.replace(/È|É|Ẹ|Ẻ|Ẽ|Ê|Ề|Ế|Ệ|Ể|Ễ/g, "E");
+        str = str.replace(/Ì|Í|Ị|Ỉ|Ĩ/g, "I");
+        str = str.replace(/Ò|Ó|Ọ|Ỏ|Õ|Ô|Ồ|Ố|Ộ|Ổ|Ỗ|Ơ|Ờ|Ớ|Ợ|Ở|Ỡ/g, "O");
+        str = str.replace(/Ù|Ú|Ụ|Ủ|Ũ|Ư|Ừ|Ứ|Ự|Ử|Ữ/g, "U");
+        str = str.replace(/Ỳ|Ý|Ỵ|Ỷ|Ỹ/g, "Y");
+        str = str.replace(/Đ/g, "D");
+        return str;
+    }
+    // const displayThemdanhmuc=()=>{
+    //     setThemdanhmuc(true);
+    // }
+    useEffect(()=>{
+        fetch('https://book-python-vip.herokuapp.com/category/')
+        .then(item=>item.json())
+        .then(item=>{
+            setCategory(item);
+        })
+    },[])
+    // const themdm=(u)=>{
+    //     setCategory([...category,u]);
+    // }
     if(props.admin=="yes"){
         return <>
     <Router>
@@ -10,47 +43,29 @@ function Danhmuc(props){
             <div className="body__danhmuc-form">
                 <h3 style={{marginLeft:10,marginTop:12,paddingTop:10}}><i class="fas fa-list-ul"></i>{" "}Danh mục</h3>
                 <ul className="body__danhmuc-list"> 
-                <Link to="/sachbanchay" style={{textDecoration:"none",color:"black"}}><li className="body__danhmuc-item">Kho sách bán chạy<i class="fas fa-chevron-right"></i></li></Link>
-                <Link to="/sachmoi" style={{textDecoration:"none",color:"black"}}><li className="body__danhmuc-item">Kho sách mới<i class="fas fa-chevron-right"></i></li></Link>
-                <Link to="/sachgiaokhoa" style={{textDecoration:"none",color:"black"}}><li className="body__danhmuc-item">Kho sách giáo khoa<i class="fas fa-chevron-right"></i></li></Link>
-                <Link to="/sachngoaingu" style={{textDecoration:"none",color:"black"}}><li className="body__danhmuc-item">Kho sách ngoại ngữ<i class="fas fa-chevron-right"></i></li></Link>
-                <Link to="/truyenngan" style={{textDecoration:"none",color:"black"}}><li className="body__danhmuc-item">Kho truyện ngắn<i class="fas fa-chevron-right"></i></li></Link>
-                <Link to="/tieuthuyet" style={{textDecoration:"none",color:"black"}}><li className="body__danhmuc-item">Kho tiểu thuyết<i class="fas fa-chevron-right"></i></li></Link>
-                <Link to="/sachtieusu" style={{textDecoration:"none",color:"black"}}><li className="body__danhmuc-item">Kho sách tiểu sử<i class="fas fa-chevron-right"></i></li></Link>
-                <Link to="/sachkinhte" style={{textDecoration:"none",color:"black"}}><li className="body__danhmuc-item">Kho sách kinh tế<i class="fas fa-chevron-right"></i></li></Link>
+                {
+                    category.map((item)=>{
+                        return <Link to={"/"+xoa_dau(item.name)} style={{textDecoration:"none",color:"black"}}><li className="body__danhmuc-item">{item.name}<i class="fas fa-chevron-right"></i></li></Link>
+                    })
+                }
+                {/* <li className="body__danhmuc-item" onClick={displayThemdanhmuc}>Thêm danh mục<i class="fas fa-chevron-right"></i></li> */}
                 </ul>
             </div>
         </div>
         <Switch>
-            <Route path="/sachbanchay">
-                <Adminbookshow themvagiohang={props.themvagiohang} category_name={"Sách bán chạy"}/>
-            </Route>
-             <Route path="/sachmoi">
-                <Adminbookshow themvagiohang={props.themvagiohang} category_name={"Sách mới"}/>
-            </Route>
-            <Route path="/sachgiaokhoa">
-                <Adminbookshow themvagiohang={props.themvagiohang} category_name={"Sách giáo khoa"}/>
-            </Route>
-            <Route path="/sachngoaingu">
-                <Adminbookshow themvagiohang={props.themvagiohang} category_name={"Sách ngoại ngữ"}/>
-            </Route>
-            <Route path="/truyenngan">
-                <Adminbookshow themvagiohang={props.themvagiohang} category_name={"Truyện ngắn"}/>
-            </Route>
-            <Route path="/tieuthuyet">
-                <Adminbookshow themvagiohang={props.themvagiohang} category_name={"Tiểu thuyết"}/>
-            </Route>
-            <Route path="/sachtieusu">
-                <Adminbookshow themvagiohang={props.themvagiohang} category_name={"Sách tiểu sử - Hồi kí"}/>
-            </Route>
-            <Route path="/sachkinhte">
-                <Adminbookshow themvagiohang={props.themvagiohang} category_name={"Sách kinh tế"}/>
-            </Route>
+            {
+                category.map((item)=>{
+                    return <Route path={"/"+xoa_dau(item.name)}>
+                    <Adminbookshow themvagiohang={props.themvagiohang} category_name={item.name}/>
+                </Route>
+                })
+            }
             <Route path="/">
                 <Adminbookshow themvagiohang={props.themvagiohang} category_name={"Sách bán chạy"}/>
             </Route>
         </Switch>
     </Router>
+    {/* {themdanhmuc && <Themdanhmuc themdanhmuc={themdm}/>} */}
         </>
         
     }
@@ -61,42 +76,22 @@ function Danhmuc(props){
             <div className="body__danhmuc-form">
                 <h3 style={{marginLeft:10,marginTop:12,paddingTop:10}}><i class="fas fa-list-ul"></i>{" "}Danh mục</h3>
                 <ul className="body__danhmuc-list"> 
-                <Link to="/sachbanchay" style={{textDecoration:"none",color:"black"}}><li className="body__danhmuc-item">Sách bán chạy<i class="fas fa-chevron-right"></i></li></Link>
-                <Link to="/sachmoi" style={{textDecoration:"none",color:"black"}}><li className="body__danhmuc-item">Sách mới<i class="fas fa-chevron-right"></i></li></Link>
-                <Link to="/sachgiaokhoa" style={{textDecoration:"none",color:"black"}}><li className="body__danhmuc-item">Sách giáo khoa<i class="fas fa-chevron-right"></i></li></Link>
-                <Link to="/sachngoaingu" style={{textDecoration:"none",color:"black"}}><li className="body__danhmuc-item">Sách ngoại ngữ<i class="fas fa-chevron-right"></i></li></Link>
-                <Link to="/truyenngan" style={{textDecoration:"none",color:"black"}}><li className="body__danhmuc-item">Truyện ngắn<i class="fas fa-chevron-right"></i></li></Link>
-                <Link to="/tieuthuyet" style={{textDecoration:"none",color:"black"}}><li className="body__danhmuc-item">Tiểu thuyết<i class="fas fa-chevron-right"></i></li></Link>
-                <Link to="/sachtieusu" style={{textDecoration:"none",color:"black"}}><li className="body__danhmuc-item">Sách tiểu sử - Hồi ký<i class="fas fa-chevron-right"></i></li></Link>
-                <Link to="/sachkinhte" style={{textDecoration:"none",color:"black"}}><li className="body__danhmuc-item">Sách kinh tế<i class="fas fa-chevron-right"></i></li></Link>
+                    {
+                        category.map((item)=>{
+                            return <Link to={"/"+xoa_dau(item.name)} style={{textDecoration:"none",color:"black"}}><li className="body__danhmuc-item">{item.name}<i class="fas fa-chevron-right"></i></li></Link>
+                        })
+                    }
                 </ul>
             </div>
         </div>
         <Switch>
-            <Route path="/sachbanchay">
-                <Bookshow themvagiohang={props.themvagiohang} category_name={"Sách bán chạy"}/>
-            </Route>
-             <Route path="/sachmoi">
-                <Bookshow themvagiohang={props.themvagiohang} category_name={"Sách mới"}/>
-            </Route>
-            <Route path="/sachgiaokhoa">
-                <Bookshow themvagiohang={props.themvagiohang} category_name={"Sách giáo khoa"}/>
-            </Route>
-            <Route path="/sachngoaingu">
-                <Bookshow themvagiohang={props.themvagiohang} category_name={"Sách ngoại ngữ"}/>
-            </Route>
-            <Route path="/truyenngan">
-                <Bookshow themvagiohang={props.themvagiohang} category_name={"Truyện ngắn"}/>
-            </Route>
-            <Route path="/tieuthuyet">
-                <Bookshow themvagiohang={props.themvagiohang} category_name={"Tiểu thuyết"}/>
-            </Route>
-            <Route path="/sachtieusu">
-                <Bookshow themvagiohang={props.themvagiohang} category_name={"Sách tiểu sử - Hồi kí"}/>
-            </Route>
-            <Route path="/sachkinhte">
-                <Bookshow themvagiohang={props.themvagiohang} category_name={"Sách kinh tế"}/>
-            </Route>
+        {
+                category.map((item)=>{
+                    return <Route path={"/"+xoa_dau(item.name)}>
+                    <Bookshow themvagiohang={props.themvagiohang} category_name={item.name}/>
+                </Route>
+                })
+            }
             <Route path="/">
                 <Bookshow themvagiohang={props.themvagiohang} category_name={"Sách bán chạy"}/>
             </Route>
@@ -105,4 +100,25 @@ function Danhmuc(props){
         </>
     }
 }
+// function Themdanhmuc(props){
+//     const [danhmuc,setDanhmuc]=useState("");
+//     const handleValue=(item)=>{
+//         setDanhmuc(item.target.value);
+//     }
+//     const themDanhmuc=()=>{
+//         if(danhmuc==""){
+//             alert('Vui lòng nhập danh mục!');
+//         }
+//         else{
+//             console.log(danhmuc)
+//             axios.post('https://book-python-vip.herokuapp.com/category/?format=api',danhmuc)
+//             .then(props.themdanhmuc(danhmuc));
+//         }
+//     }
+//     return <div style={{position:"fixed",backgroundColor:"white",height:"100px",width:"300px",zIndex:"10",left:"500px",top:"200px",border:"1px solid black",borderRadius:"4px"}}>
+//         <p>Tên danh muc:</p>
+//         <input type="text" onChange={handleValue}/>
+//         <button onClick={themDanhmuc}>Gửi</button>
+//     </div>
+// }
 export default memo(Danhmuc);

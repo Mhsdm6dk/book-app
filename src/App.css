@@ -251,6 +251,7 @@
     cursor: pointer;
     border: none;
     background: white;
+    color: #c92127;
 }
 .mua{
     cursor: pointer;
@@ -273,4 +274,31 @@
     text-decoration: none;
     color: black;
     cursor: pointer;
+}
+.itemshow{
+    position: fixed;
+    top:50px;
+    left: 300px;
+    height: 500px;
+    width: 800px;
+    background-color: white;
+    border: 1.5px solid gray;
+    border-radius: 4px;
+    z-index: 10;
+    animation: fadeIn linear 0.3s;
+    overflow: hidden;
+}
+.itemshow__image{
+    background-color:white;
+    width: 400px;
+    height: 450px;
+    z-index: 12;
+}
+.itemshow__info{
+    position: relative;
+    bottom: 35px;
+    width: 400px;
+    height: 350px;
+    overflow: auto;
+    z-index: 12;
 }
