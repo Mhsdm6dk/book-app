@@ -174,12 +174,13 @@
     border: 1px solid #ced4da;
 }
 .quanlydonhang{
+    font-weight: 500;
     cursor: pointer;
     position: relative;
     top:10px;
     border-radius: 3px;
     left: 370px;
-    width: 150px;
+    width: 160px;
     height: 20px;
     border: 2px solid black;
     padding: 0px 5px 5px 5px;
@@ -297,7 +298,7 @@
 .itemshow__info{
     position: relative;
     bottom: 35px;
-    width: 400px;
+    width: 395px;
     height: 350px;
     overflow: auto;
     z-index: 12;

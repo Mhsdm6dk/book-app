@@ -59,7 +59,7 @@ import { useSelector } from "react-redux";
             }
                 </div>
             
-                <p style={{marginLeft:"30px"}}>Thành tiền: {tong+" Đ"}</p>
+                <p style={{marginLeft:"30px"}}>Thành tiền: {tong.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')+" Đ"}</p>
                 <button className="form__inputform-button2" style={{marginLeft:"75px" ,marginBottom:"30px"}} onClick={thanhtoan}>Thanh toán</button>
                 </div>
                 {state.displayThanhtoan && <Thanhtoan clear={props.clear} user={user} giohang={props.giohang} cost={tong} soluong={soluong} thoatform={thoatform}/>}

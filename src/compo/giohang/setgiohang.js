@@ -30,7 +30,7 @@ export default function Setgiohang(props){
                 <td>Tên:{" "+props.ten}</td>
             </tr>
             <tr>
-            <td>Giá:{" "+props.gia}</td>
+            <td>Giá:{" "+props.gia.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')+"Đ"}</td>
             </tr>
             
         </table>

@@ -17,7 +17,7 @@ export default function Displaybook(props){
                             <br/>
                             {u.name}
                             <br/>
-                            <span style={{position:"absolute",bottom:"50px",right:"50px"}}>Giá:{" "+u.price+"Đ"}</span>
+                            <span style={{position:"absolute",bottom:"50px",right:"50px"}}>Giá:{" "+u.price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')+"Đ"}</span>
                             <div >
                                 <button className="them them2" name={u.name} value={u.price} id={index} onClick={props.them}>Thêm</button>
                                 <span className="them them1" name={u.name} value={u.price} id={index} onClick={props.them}>Mua ngay</span>
@@ -44,7 +44,7 @@ function Display(props){
             </div>
             <div className="itemshow__info">
                     <p style={{fontSize:"20px",fontWeight:"bold",marginLeft:"20px"}}>{props.item.name}</p>
-                    <span style={{marginLeft:"20px",fontSize:"25px",fontWeight:"bold",color:"#c92127"}}>Giá:{" "+props.item.price+"Đ"}</span>
+                    <span style={{marginLeft:"20px",fontSize:"25px",fontWeight:"bold",color:"#c92127"}}>Giá:{" "+props.item.price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')+"Đ"}</span>
                     <p style={{marginLeft:"20px"}}>Mô tả:{" "+props.item.describes}</p>
             </div>
             <div style={{position:"relative",bottom:"120px",right:"45px",zIndex:"15"}}>

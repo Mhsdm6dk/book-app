@@ -31,7 +31,7 @@ export default function Boxitem(props){
         props.xoasanpham(props.u.id);
     }
     return <div className="body__itembook-item">
-    <div className="body__itembook-item-box" style={{cursor:"pointer",height:"300px",position:"relative"}}>
+    <div className="body__itembook-item-box" style={{height:"300px",position:"relative"}}>
         <img className="body__itembook-item-image" src={props.u.image} alt="lol"></img>
         <br/>
         {props.u.name}

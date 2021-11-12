@@ -55,7 +55,7 @@ function Order(props){
             return<div className="quanlidonhang__body-list-order" >
                 Mã đơn hàng:{item.code}<br/>
                 Thời gian tạo:{item.creatDate}<button className="list-order-button" value={item.id} onClick={xoaOrder}>Xóa</button><br/>
-                Tổng số tiền:{item.cost}<br/>
+                Tổng số tiền:{item.cost+" Đồng"}<br/>
                 <DDonhang code={item.code}/>
                 </div>
         })}
@@ -83,7 +83,7 @@ function DDonhang(props){
                 <td>Tên:{" "+item.item.name}</td>
             </tr>
             <tr>
-            <td>Giá:{" "+item.item.price}</td>
+            <td>Giá:{" "+item.item.price+" Đồng"}</td>
             </tr>
             <tr>
             <td>Số lượng:{" "+item.quantity}</td>
