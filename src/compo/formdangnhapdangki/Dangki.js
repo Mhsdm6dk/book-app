@@ -28,8 +28,8 @@ export default function Dangki(props){
                 break;
             }
         }
-        if(state.password!=state.nhaplaipassword){
-            alert("Nhập lại mật khẩu chưa đúng !");
+        if(state.password!=state.nhaplaipassword || state.username=="" || state.password==""){
+            alert("Nhập lại mật khẩu sai hoặc định dạng tài khoản chưa đúng !");
         }
         else if(kt==1){
             alert("Tên đăng nhập này đã được đăng kí, vui lòng chọn tên khác !");

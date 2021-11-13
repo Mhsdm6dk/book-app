@@ -1,3 +1,4 @@
+
 import React,{ useState} from "react";
 import Setgiohang from './setgiohang';
 import '../../App.css';
@@ -9,7 +10,6 @@ import { useSelector } from "react-redux";
          displayThanhtoan:false
      });
      const thanhtoan=()=>{
-         document.getElementById("formgiohang").style.display="none";
         if(user.username==""){
             alert('Bạn phải đăng nhập để thanh toán!');
         }
@@ -18,7 +18,7 @@ import { useSelector } from "react-redux";
                 displayThanhtoan:true
             });
         }
-        console.log(props.giohang)
+    
      }
      const thoatform=()=>{
          props.thoatform();
@@ -75,57 +75,62 @@ function Thanhtoan(props) {
     });
     const y=user.username+Math.random().toString();
     const dathang=()=>{
-        const u={
-            name: state.name,
-            email: state.email,
-            address: state.address,
-            telephone: state.telephone,
-            username: user.username,
-            password:user.password
+        if(state.name=="" || state.email=="" || state.address=="" || state.telephone==""){
+            alert('Vui lòng nhập đủ thông tin!');
         }
-        
-        fetch('https://book-python-vip.herokuapp.com/customer/'+user.id+'/',{
-            method:'PUT',
-            headers:{
-                'Content-Type': 'application/json'
-            },
-            body:JSON.stringify(u),
-            redirect: 'follow'
-        })
-            fetch("https://book-python-vip.herokuapp.com/oder/?format=api",{
-            method:"POST",
-            headers:{
-                'Content-Type': 'application/json'
-            },
-            body:JSON.stringify({
-                "username":user.username,
-                "cost":props.cost,
-                "code": y,
-                "total_product":props.soluong
+        else{
+            const u={
+                name: state.name,
+                email: state.email,
+                address: state.address,
+                telephone: state.telephone,
+                username: user.username,
+                password:user.password
+            }
+            
+            fetch('https://book-python-vip.herokuapp.com/customer/'+user.id+'/',{
+                method:'PUT',
+                headers:{
+                    'Content-Type': 'application/json'
+                },
+                body:JSON.stringify(u),
+                redirect: 'follow'
             })
-            })
-            .then(u=>{
-                console.log(props.giohang)
-                props.giohang.map((item)=>{
-                    console.log(item)
-                    fetch("https://book-python-vip.herokuapp.com/oder_item/",{
+                fetch("https://book-python-vip.herokuapp.com/oder/?format=api",{
                 method:"POST",
                 headers:{
                     'Content-Type': 'application/json'
                 },
                 body:JSON.stringify({
-                    "quantity":item.soluong,
-                    "item_id":item.id,
-                    "code": y
+                    "username":user.username,
+                    "cost":props.cost,
+                    "code": y,
+                    "total_product":props.soluong
                 })
                 })
+                .then(u=>{
+                    console.log(props.giohang)
+                    props.giohang.map((item)=>{
+                        console.log(item)
+                        fetch("https://book-python-vip.herokuapp.com/oder_item/",{
+                    method:"POST",
+                    headers:{
+                        'Content-Type': 'application/json'
+                    },
+                    body:JSON.stringify({
+                        "quantity":item.soluong,
+                        "item_id":item.id,
+                        "code": y
+                    })
+                    })
+                    })
                 })
-            })
+                
             
-        
-        alert("Đặt hàng thành công!");
-        props.clear();
-        props.thoatform();
+            alert("Đặt hàng thành công!");
+            props.clear();
+            props.thoatform();
+        }
     }
     const handleForm=(item)=>{
         setState({...state,[item.target.name]:item.target.value})

@@ -8,7 +8,7 @@ export default function Displaybook(props){
     const thoat=()=>{
         setShow({display:false,item:{},id:0})
     }
-    return <div className="body__itembook">
+    return <div className="body__itembook" >
                 {
                    props.kho.map((u,index)=>{
                         return <div className="body__itembook-item">
