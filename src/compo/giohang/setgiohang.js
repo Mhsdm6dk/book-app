@@ -34,7 +34,7 @@ export default function Setgiohang(props){
             </tr>
             
         </table>
-        <span className="giohang__soluong">Số lượng:<button className="giohang__button-thembot" onClick={them}>+</button><input type="text" value={sl} name="soluong" style={{width:"15px"}}/><button className="giohang__button-thembot" onClick={bot}>-</button></span>
-        <span className="giohang__button-xoa"><button onClick={xoaitem}>Xóa</button></span>
+        <span className="giohang__soluong">Số lượng:<button className="giohang__button-thembot" style={{border:"none",outline:"none",background:"white",fontWeight:"bold",fontSize:"25px",cursor:"pointer"}} onClick={bot}>-</button><input type="text" value={sl} name="soluong" style={{width:"15px"}}/><button className="giohang__button-thembot" style={{border:"none",outline:"none",background:"white",fontWeight:"bold",cursor:"pointer",fontSize:"16px"}} onClick={them}>+</button></span>
+        <span className="giohang__button-xoa"><button onClick={xoaitem} style={{border:"none",outline:"none",background:"white",fontWeight:"bold",color:"#c92127",cursor:"pointer"}}>Xóa</button></span>
     </div>
 }

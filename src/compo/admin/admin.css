@@ -28,6 +28,7 @@
 .them{
     color: #c92127;
     font-weight: 500;
+    background: none;
 }
 .them1{
     position: absolute;
@@ -43,7 +44,8 @@
     font-size: 15px;
 }
 .quanlidonhang{
-    background:white;
+    background-image: url(https://image.freepik.com/free-vector/white-abstract-background_23-2148810112.jpg);
+    background-size: 800px;
     border: 1px solid black;
     position: fixed;
     border-radius: 6px;
@@ -64,14 +66,13 @@
 }
 .quanlidonhang__body-list{
   
-    border: 1px solid black;
     margin: 5px;
     border-radius: 4px;
     padding: 10px;
 }
 .quanlidonhang__body-list-order{
     
-    border-top: 1px solid gray;
+    margin-top: 10px;
     padding: 10px;
 }
 .list-order-button{

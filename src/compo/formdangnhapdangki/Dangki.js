@@ -55,7 +55,9 @@ export default function Dangki(props){
     const gotodangnhap=()=>{
         props.display("Đăng nhập");
     }
-        return <div className="form__inputform" id="formdangki" >
+        return <div className="background">
+        <div className="form__dangnhap-inputform"  >
+        <div className="form__inputform" id="formdangki" >
             <div style={{margin:"0px 0px 20px 10px"}}>
                 <div className="form__header">
                     <h3 >Đăng kí</h3>
@@ -70,5 +72,7 @@ export default function Dangki(props){
                 <button className="button__dangnhap form__inputform-button2" onClick={dangki}>Đăng kí</button>
                 <button className="button__boqua form__inputform-button" onClick={props.thoatform}>Bỏ qua</button>
         </div>
+    </div>
+    </div>
     </div>
     }

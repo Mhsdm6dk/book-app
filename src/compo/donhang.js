@@ -10,7 +10,8 @@ export default function Donhang(props){
             setUserlist(item.filter(u=>u.username==user.username));
         })
     },[])
-    return<div className="quanlidonhang">
+    return<div className="background">
+    <div className="quanlidonhang">
         <div className="quanlidonhang__head">
                 <h3 style={{margin:"20px 630px 0px 20px"}}>Danh sách đơn hàng</h3>
                 <p className="them 2" onClick={props.thoatform}>Đóng</p>
@@ -19,17 +20,21 @@ export default function Donhang(props){
             {
                 userlist.map((item)=>{
                     return<div className="quanlidonhang__body-list" >
-                        <p>
+                        <p style={{background:"white",padding:"2px 15px 15px 15px",borderRadius:"4px"}}>
+                        <h3 style={{borderBottom:"1px solid #ececec",padding:"0px 0px 10px 0px"}}>THÔNG TIN KHÁCH HÀNG</h3>
+                        <div>
                         Name:{" "+item.name}<br/>
                         Địa chỉ:{" "+item.address}<br/>
                         SĐT:{" "+item.telephone}<br/>
                         Email:{" "+item.email}<br/>
+                        </div>
                         </p>
                          <Order user={item} />
                     </div>
                 })
             }
         </div>
+    </div>
     </div>
 }
 function Order(props){
@@ -52,10 +57,10 @@ function Order(props){
    }
     return<div >
         {kho.map((item)=>{
-            return<div className="quanlidonhang__body-list-order" >
-                Mã đơn hàng:{item.code}<br/>
-                Thời gian tạo:{item.creatDate}<button className="list-order-button" value={item.id} onClick={xoaOrder}>Xóa</button><br/>
-                Tổng số tiền:{item.cost.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')+" Đồng"}<br/>
+            return<div className="quanlidonhang__body-list-order" style={{background:"white",padding:"2px 15px 15px 15px",borderRadius:"4px"}} >
+               Mã đơn hàng: <span style={{fontWeight:"500"}}>{item.code}</span> <br/>
+               Thời gian tạo: <span style={{fontWeight:"500"}}>{item.creatDate} </span><button className="button__dangnhap form__inputform-button2" style={{fontWeight:"bold",color:"#c92127",border:"2px solid #c92127",borderRadius:"6px",height:"30px",width:"150px",marginRight:"-50px",background:"white"}} value={item.id} onClick={xoaOrder}>Hủy đơn hàng</button><br/>
+                Tổng số tiền: <span style={{fontWeight:"500"}}>{item.cost.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')+" Đồng"}</span><br/>
                 <DDonhang code={item.code}/>
                 </div>
         })}

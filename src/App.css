@@ -56,59 +56,66 @@
     font-size: 25px;
 }
 .form__inputform{
-    width: 300px;
-    position: fixed;
+    width: 400px;
+    height: 95%;
+    position: absolute;
     border-radius: 4px;
-    border-style: groove;
+    border: none;
     background-color: rgb(255, 255, 255);
-    top:120px;
-    right: 480px;
+    top:12px;
+    left: 15px;
     z-index: 3;
-    animation: fadeIn linear 0.3s;
 }
 .form__inputform-element{
     margin-left:10px ;
     margin-bottom: 20px;
 }
 .form__inputform-text{
-    width: 270px;
-    height: 30px;
+    width: 350px;
+    height: 35px;
     border-radius: 4px;
+    border: 1px solid #e5e7e9;
 }
 .form__inputform-text:focus{
-    border: 2px solid #65c2ee;
+    
 }
 .form__inputform-button{
     border-radius: 15px;
     border: none;
-    margin:15px 0px 0px 62px;
+    margin:15px 0px 0px 100px;
     width: 150px;
     height: 35px;
+    font-weight: bold;
     cursor: pointer;
 }
 .form__inputform-button2{
+    font-weight: bold;
     border-radius: 15px;
-    background-color: white;
-    color: #d03e43;
-    border: 1px solid #d03e43;
-    margin:15px 0px 0px 62px;
+    background-color: #1877f2;
+    color: white;
+    border: none;
+    margin:15px 0px 0px 100px;
     width: 150px;
     height: 35px;
     cursor: pointer;
 }
 
 .spaceline{
+    color: #686868;
+    font-style: inherit;
     margin-bottom: 5px;
     margin-top: 10px;
 }
 .form__header{
     display: inline-flex;
+    margin-bottom: 25px;
 }
 .form__header-link{
+    font-weight: 500;
     position: relative;
-    color: red;
+    color: #c92127;
     cursor: pointer;
-    left:120px;
+    left:230px;
     top:20px;
 }
 /* header__search */
@@ -130,17 +137,20 @@
     border: none;
     cursor: pointer;
 }
-
+.header__searchborder{
+    z-index: 5;
+}
 /* css cho giỏ hàng */
 .dong{
+    font-weight: bold;
     outline: none;
     background: white;
     border: none;
-    color: red;
+    color: #c92127;
     cursor: pointer;
     position: relative;
-    left: 170px;
-    top: 5px;
+    left: 260px;
+    top: 10px;
 }
 .giohang__sach{
     width: 40px;
@@ -148,14 +158,15 @@
 }
 .giohang__button-xoa{
     margin-left: 50px;
+    font-weight: 500;
 }
 .giohang__soluong{
     margin-left: 20px;
 }
 .giohang_title{
     position: relative;
-    left: 10px;
-    bottom: 15px;
+    left: 20px;
+    bottom: 10px;
 }
 .formthanhtoan{
     position: fixed;
@@ -229,6 +240,8 @@
 .body__itembook-item{
     text-align: center;
     width: 20%;
+    color: #4a4540;
+    font-weight: 500;
 }
 .body__itembook-item-image{
     margin-top: 12px;
@@ -283,7 +296,6 @@
     height: 500px;
     width: 800px;
     background-color: white;
-    border: 1.5px solid gray;
     border-radius: 4px;
     z-index: 10;
     animation: fadeIn linear 0.3s;
@@ -294,6 +306,7 @@
     width: 400px;
     height: 450px;
     z-index: 12;
+    
 }
 .itemshow__info{
     position: relative;
@@ -301,7 +314,8 @@
     width: 395px;
     height: 350px;
     overflow: auto;
-    z-index: 12;
+    z-index: 13;
+    background: white;
 }
 .thongtincanhan{
     height: 400px;
@@ -313,3 +327,27 @@
     background-color: white;
     border: 1.5px solid gray;
 }
+.form__dangnhap-inputform{
+    height: 500px;
+    width: 800px;
+    left: 240px;
+    top: 55px;
+    position: fixed;
+    background-image: url(./image/iStock-506432952.jpg);
+    background-size: 800px;
+    z-index: 6;
+    border: 1px solid #686868;
+    border-radius: 6px;
+   
+}
+.background {
+    z-index: 6;
+    position: fixed;
+    background-color: rgba(0, 0, 0,0.35);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    animation: fadeIn linear 0.3s;
+  }

@@ -35,7 +35,8 @@ function Display(props){
         props.them(item);
         props.thoat();
     }
-    return <div className="itemshow">
+    return <div className="background" style={{top:"0px",left:"0px"}}>
+    <div className="itemshow">
         <p style={{color:"#c92127",float:"right",margin:"10px 20px",cursor:"pointer",fontWeight:"bold"}} onClick={props.thoat}>Đóng</p>
         <div style={{display:"inline-flex",flexWrap:"wrap",marginTop:"40px"}}>
             <div className="itemshow__image">
@@ -45,13 +46,14 @@ function Display(props){
             <div className="itemshow__info">
                     <p style={{fontSize:"20px",fontWeight:"bold",marginLeft:"20px"}}>{props.item.name}</p>
                     <span style={{marginLeft:"20px",fontSize:"25px",fontWeight:"bold",color:"#c92127"}}>Giá:{" "+props.item.price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')+"Đ"}</span>
-                    <p style={{marginLeft:"20px"}}>Mô tả:{" "+props.item.describes}</p>
+                    <p style={{marginLeft:"20px"}}><b>Mô tả:</b>{" "+props.item.describes}</p>
             </div>
             <div style={{position:"relative",bottom:"120px",right:"45px",zIndex:"15"}}>
-                <button className="button__dangnhap form__inputform-button2" style={{fontWeight:"bold",color:"#c92127",border:"2px solid #c92127",borderRadius:"6px",height:"40px",width:"200px",marginRight:"-50px"}} name={props.item.name} value={props.item.price} id={props.id} onClick={them}>Thêm vào giỏ hàng</button>
+                <button className="button__dangnhap form__inputform-button2" style={{fontWeight:"bold",color:"#c92127",border:"2px solid #c92127",borderRadius:"6px",height:"40px",width:"200px",marginRight:"-50px",background:"white"}} name={props.item.name} value={props.item.price} id={props.id} onClick={them}>Thêm vào giỏ hàng</button>
                 <button className="button__boqua form__inputform-button" style={{fontWeight:"bold",color:"white",backgroundColor:"#c92127",borderRadius:"6px",height:"40px",width:"200px"}} onClick={props.thoat} >Bỏ qua</button>
             </div>
         </div>
 
+    </div>
     </div>
 }

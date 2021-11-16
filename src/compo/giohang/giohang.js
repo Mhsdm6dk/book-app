@@ -31,26 +31,27 @@ import { useSelector } from "react-redux";
      }
     if(props.giohang.length==0){
 
-        return<> 
-        <div className="form__inputform" id="formgiohang" >
+        return<> <div className="background">
+        <div className="form__inputform" id="formgiohang" style={{height:"500px",position:"fixed",left:"450px",top:"35px"}}>
                 <div style={{display:"inline-flex"}}>
                 <h3 className="giohang_title">Giỏ hàng</h3>
                 <span><button className='dong' onClick={thoatform}>Đóng</button></span>
                 </div>
-                <p style={{marginLeft:"12px"}}>Chưa có sản phẩm nào trong giỏ hàng</p>
-        <img src={giohang} style={{marginLeft:"75px"}}></img>
-        <button className="form__inputform-button2" style={{marginLeft:"75px" ,marginBottom:"30px"}} onClick={thoatform}>Tiếp tục mua sắm</button>
+                <p style={{marginLeft:"65px"}}>Chưa có sản phẩm nào trong giỏ hàng !</p>
+        <img src={giohang} style={{marginLeft:"125px"}}></img>
+        <button className="form__inputform-button2" style={{marginLeft:"125px" ,marginBottom:"30px"}} onClick={thoatform}>Tiếp tục mua sắm</button>
                 
+        </div>
         </div>
         </>
     }
-    else return <>
-            <div className="form__inputform" id="formgiohang" style={{height:"350px"}}>
+    else return <><div className="background">
+            <div className="form__inputform" id="formgiohang" style={{height:"500px",position:"fixed",left:"450px",top:"35px"}}>
                 <div style={{display:"inline-flex"}}>
                 <h3 className="giohang_title">Giỏ hàng</h3>
                 <span><button className='dong' onClick={thoatform}>Đóng</button></span>
                 </div>
-                <div style={{overflow:"auto",height:"170px"}}>
+                <div style={{overflow:"auto",height:"280px"}}>
                 {   
                     props.giohang.map((u)=>{
                     return <Setgiohang ten={u.ten} gia={u.gia} image={u.image} soluong={u.soluong} xoabot={props.xoabot} xoa={props.xoa} themvagiohang={props.themvagiohang}/>
@@ -59,10 +60,11 @@ import { useSelector } from "react-redux";
             }
                 </div>
             
-                <p style={{marginLeft:"30px"}}>Thành tiền: {tong.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')+" Đ"}</p>
-                <button className="form__inputform-button2" style={{marginLeft:"75px" ,marginBottom:"30px"}} onClick={thanhtoan}>Thanh toán</button>
+                <p style={{marginLeft:"30px",fontWeight:"bold",color:"#c92127"}}>Thành tiền: {tong.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')+" Đ"}</p>
+                <button className="form__inputform-button2" style={{marginLeft:"125px" ,marginBottom:"30px"}} onClick={thanhtoan}>Thanh toán</button>
                 </div>
                 {state.displayThanhtoan && <Thanhtoan clear={props.clear} user={user} giohang={props.giohang} cost={tong} soluong={soluong} thoatform={thoatform}/>}
+                </div>
             </>      
 }
 function Thanhtoan(props) {

@@ -47,7 +47,9 @@ export default function Dangnhap(props){
         const gotodangki=()=>{
             props.display("Đăng kí");
         }
-        return <div className="form__inputform" id="formdangnhap" >
+        return <div className="background">
+            <div className="form__dangnhap-inputform" id="formdangnhap" >
+            <div className="form__inputform">
             <div style={{margin:"0px 0px 20px 10px"}}>
                 <div className="form__header">
                 <h3 >Đăng nhập</h3>
@@ -57,9 +59,13 @@ export default function Dangnhap(props){
             <input type="text" id="tendangnhap" placeholder="Nhập tên đăng nhập" name="username" onChange={getinfo} className="form__inputform-text"></input>
             <div className="spaceline">Mật khẩu:</div>
             <input type="password" id="matkhau" name="password" onChange={getinfo} placeholder="*******" className="form__inputform-text"></input>
+            <br/>
             <button className="button__dangnhap form__inputform-button2" onClick={dangnhap}>Đăng nhập</button>
+            <br/>
             <button className="button__boqua form__inputform-button" onClick={props.thoatform}>Bỏ qua</button>
             </div>
+            </div>
+        </div>
         </div>
 
 }
