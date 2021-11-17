@@ -106,6 +106,7 @@ function Headtext(props){
 export function Headicon(props){
     const dispatch=useDispatch();
     const [tt,setTt]=useState(false);
+    const [mk,setMk]=useState(false);
     const [formtt,setFormtt]=useState(false);
     const dangxuat=()=>{
         dispatch(kiemtrauser({
@@ -145,8 +146,15 @@ export function Headicon(props){
             setFormtt(true);
             setTt(false);
         }
+        const hienthiformthongtin2=()=>{
+            setMk(true);
+            setTt(false);
+        }
         const thoatform=()=>{
             setFormtt(false);
+        }
+        const thoatform2=()=>{
+            setMk(false);
         }
         return <ul style={{zIndex:"5",listStyle:"none",position:"relative"}} >
             <li className="header__headicon">
@@ -159,8 +167,9 @@ export function Headicon(props){
             <li>
             <div onClick={hienthi} className="quanlydonhang">Quản lý đơn hàng <i class="fas fa-angle-down" style={{fontSize:"20px",position:"relative",top:"3px",left:"3px"}}></i></div>
             </li>
-            {tt && <Displaythongtin hienthiformthongtin={hienthiformthongtin} name={props.name}/>}
+            {tt && <Displaythongtin hienthiformthongtin={hienthiformthongtin} hienthiformthongtin2={hienthiformthongtin2} name={props.name}/>}
             {formtt && <Displayformthongtin thoatform={thoatform}/>}
+            {mk && <Displaypassword thoatform={thoatform2}/>}
         </ul>
     }
     
@@ -187,7 +196,7 @@ function Displaythongtin(props){
         <i class="far fa-envelope"  style={{fontSize:"25px",padding:"7px",borderRadius:"50px",background:"#e4e6eb"}}></i> <b style={{position:'relative',bottom:"4.5px",color:"#353535",fontWeight:"500"}}>Đóng góp ý kiến</b>
         </li>
         <li style={{borderTop:"1.5px solid #999999",position:"relative",right:"20px"}}></li>
-        <li className="thongtincanhan__info" style={{height:"40px",paddingLeft:"10px",paddingTop:"5px",width:"299px"}}>
+        <li onClick={props.hienthiformthongtin2} className="thongtincanhan__info" style={{height:"40px",paddingLeft:"10px",paddingTop:"5px",width:"299px"}}>
         <i class="fas fa-cog"  style={{fontSize:"25px",padding:"7px",borderRadius:"50px",background:"#e4e6eb"}}></i> <b style={{position:'relative',bottom:"4.5px",color:"#353535",fontWeight:"500"}}>Cài đặt và quyền riêng tư</b>
         </li>
         <li style={{borderTop:"1.5px solid #999999",position:"relative",right:"20px"}}></li>
@@ -248,18 +257,70 @@ function Displayformthongtin(props){
     }
     return <div className="formthanhtoan" id="formdathang" style={{top:"115px"}}>
     <table style={{marginLeft:"20px"}}>
-    <tr><td colSpan="2"><h3>Thay đổi thông tin</h3></td><td ><span onClick={dong} style={{marginLeft:"60px",color:"#c92127",fontWeight:"500",cursor:"pointer"}}>Đóng</span></td></tr>
-    <tr><td>Họ và tên</td><td><input type="text" name="name" value={state.name} className="thanhtoan__inputtext" onChange={handleForm}></input></td></tr>
-    <tr><td>Email</td><td><input type="email" name="email" value={state.email} onChange={handleForm} className="thanhtoan__inputtext"></input></td></tr>
-    <tr><td>Số điện thoại</td><td><input type="text" name="telephone" onChange={handleForm} value={state.telephone} className="thanhtoan__inputtext" ></input></td></tr>
+    <tr><td colSpan="2"><h3>Thay đổi thông tin</h3></td><td ><span onClick={dong} style={{marginLeft:"100px",color:"#c92127",fontWeight:"500",cursor:"pointer"}}>Đóng</span></td></tr>
+    <tr><td>Họ và tên</td><td><input placeholder={user.name} type="text" name="name" value={state.name} className="thanhtoan__inputtext" onChange={handleForm}></input></td></tr>
+    <tr><td>Email</td><td><input placeholder={user.email} type="email" name="email" value={state.email} onChange={handleForm} className="thanhtoan__inputtext"></input></td></tr>
+    <tr><td>Số điện thoại</td><td><input placeholder={user.telephone} type="text" name="telephone" onChange={handleForm} value={state.telephone} className="thanhtoan__inputtext" ></input></td></tr>
     <tr><td>Quốc gia</td><td><select className="thanhtoan__inputtext" style={{width:"457px"}}>
                     <option>Việt Nam</option>
                     <option>Tiểu vương quốc PTIT</option>
                     <option>Thái Lan</option>
                     <option>Trung Quốc</option>
                 </select></td></tr>
-    <tr><td>Địa chỉ</td><td><input type="text" name="address" value={state.address} onChange={handleForm} className="thanhtoan__inputtext"></input></td></tr>
+    <tr><td>Địa chỉ</td><td><input placeholder={user.address} type="text" name="address" value={state.address} onChange={handleForm} className="thanhtoan__inputtext"></input></td></tr>
     </table>
     <button className="form__inputform-button2" style={{marginLeft:"275px" ,marginBottom:"30px"}} onClick={dathang} >Thay đổi thông tin</button>
+</div>
+}
+function Displaypassword(props){
+    const user=useSelector(state=>state.user);
+    const dispatch=useDispatch();
+    const [state,setState]= useState({
+        password:"",
+        newpassword:"",
+        nhaplaipassword:""
+    });
+    const dathang=()=>{
+        if(state.newpassword=="" || state.nhaplaipassword!=state.newpassword || state.password != user.password){
+            alert('Nhập sai mật khẩu hoặc nhập thông tin chưa đúng');
+        }
+        else{
+            const u={
+                name: user.name,
+                email: user.email,
+                address: user.address,
+                telephone: user.telephone,
+                username: user.username,
+                password:state.newpassword
+            }
+            
+            fetch('https://book-python-vip.herokuapp.com/customer/'+user.id+'/',{
+                method:'PUT',
+                headers:{
+                    'Content-Type': 'application/json'
+                },
+                body:JSON.stringify(u),
+                redirect: 'follow'
+            })
+            
+            alert("Thay đổi mật khẩu thành công!");
+            dispatch(kiemtrauser({...user,password:state.newpassword}))
+            props.thoatform();
+        }
+    }
+    const handleForm=(item)=>{
+        setState({...state,[item.target.name]:item.target.value})
+    }
+    const dong=()=>{
+        props.thoatform();
+    }
+    return <div className="formthanhtoan" style={{top:"115px",left:"370px",width:"500px"}}>
+    <table style={{marginLeft:"20px"}}>
+    <tr><td colSpan="2"><h3>Thay đổi mật khẩu</h3></td><td ><span onClick={dong} style={{color:"#c92127",fontWeight:"500",cursor:"pointer"}}>Đóng</span></td></tr>
+    <tr><td>Mật khẩu cũ</td><td><input type="password" name="password" value={state.password} style={{width: "250px"}} className="thanhtoan__inputtext" onChange={handleForm}></input></td></tr>
+    <tr><td>Mật khẩu mới</td><td><input type="password" name="newpassword" value={state.newpassword} style={{width: "250px"}} onChange={handleForm} className="thanhtoan__inputtext"></input></td></tr>
+    <tr><td>Nhập lại mật khẩu mới</td><td><input type="password" name="nhaplaipassword" value={state.nhaplaipassword} style={{width: "250px"}} onChange={handleForm} className="thanhtoan__inputtext"></input></td></tr>
+    </table>
+    <button className="form__inputform-button2" style={{marginLeft:"175px" ,marginBottom:"30px"}} onClick={dathang} >Thay đổi thông tin</button>
 </div>
 }
