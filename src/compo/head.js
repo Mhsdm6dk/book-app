@@ -205,7 +205,7 @@ function Displaythongtin(props){
         </li>
         <li style={{borderTop:"1.5px solid #999999",position:"relative",right:"20px"}}></li>
         <li className="thongtincanhan__info" style={{height:"40px",paddingLeft:"10px",paddingTop:"5px",width:"299px"}}>
-        <i class="far fa-moon" style={{fontSize:"25px",padding:"7px",borderRadius:"50px",background:"#e4e6eb"}}></i> <span style={{position:'relative',bottom:"4.5px",color:"#353535",fontWeight:"500"}}>Trợ giúp và hỗ trợ</span>
+        <i class="far fa-moon" style={{fontSize:"25px",padding:"7px",borderRadius:"50px",background:"#e4e6eb"}}></i> <span style={{position:'relative',bottom:"4.5px",color:"#353535",fontWeight:"500"}}>Độ sáng và màn hình</span>
         </li>
     </ul>
 }
