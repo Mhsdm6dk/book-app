@@ -14,6 +14,7 @@ import { useSelector } from "react-redux";
             alert('Bạn phải đăng nhập để thanh toán!');
         }
         else{
+            document.getElementById('formgiohang').style.display="none";
             setState({
                 displayThanhtoan:true
             });
@@ -137,11 +138,14 @@ function Thanhtoan(props) {
     const handleForm=(item)=>{
         setState({...state,[item.target.name]:item.target.value})
     }
-    return<div className="formthanhtoan" id="formdathang" style={{top:"70px"}}>
+    const dong=()=>{
+        props.thoatform();
+    }
+    return<div className="formthanhtoan" id="formdathang" style={{top:"65px"}}>
         <table style={{marginLeft:"20px"}}>
-        <tr><td colSpan="2"><h3>Thông tin người nhận</h3></td></tr>
+        <tr><td colSpan="2"><h3>Thông tin người nhận</h3></td><td ><span onClick={dong} style={{marginLeft:"60px",color:"#c92127",fontWeight:"500",cursor:"pointer"}}>Đóng</span></td></tr>
         <tr><td>Họ tên người nhận</td><td><input type="text" name="name" value={state.name} className="thanhtoan__inputtext" onChange={handleForm}></input></td></tr>
-        <tr><td>Emai</td><td><input type="email" name="email" value={state.email} onChange={handleForm} className="thanhtoan__inputtext"></input></td></tr>
+        <tr><td>Email</td><td><input type="email" name="email" value={state.email} onChange={handleForm} className="thanhtoan__inputtext"></input></td></tr>
         <tr><td>Số điện thoại</td><td><input type="text" name="telephone" onChange={handleForm} value={state.telephone} className="thanhtoan__inputtext" ></input></td></tr>
         <tr><td>Quốc gia</td><td><select className="thanhtoan__inputtext" style={{width:"457px"}}>
                         <option>Việt Nam</option>
@@ -149,7 +153,7 @@ function Thanhtoan(props) {
                         <option>Thái Lan</option>
                         <option>Trung Quốc</option>
                     </select></td></tr>
-        <tr><td>Địa nhận hàng</td><td><input type="text" name="address" value={state.address} onChange={handleForm} className="thanhtoan__inputtext"></input></td></tr>
+        <tr><td>Địa chỉ nhận hàng</td><td><input type="text" name="address" value={state.address} onChange={handleForm} className="thanhtoan__inputtext"></input></td></tr>
         <tr><td>Ghi chú</td><td><textarea className="thanhtoan__inputtext" style={{height:"70px"}} placeholder="Các thông tin như giờ nhận, số nhà cụ thể,...">  
         </textarea></td> </tr> 
         </table>

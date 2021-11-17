@@ -102,7 +102,7 @@ if(user.admin!="yes"){
     <div>
         <header className="header">
             <div className="dau">
-              <Head clear={clear} opengiohang={opengiohang} setOpengiohang={setOpengiohang} giohang={state.giohang} admin={user.admin} username={user.username} xoa={xoa} xoabot={xoabot} themvagiohang={themvagiohang}/>
+              <Head clear={clear} opengiohang={opengiohang} setOpengiohang={setOpengiohang} giohang={state.giohang} admin={user.admin} name={user.name} username={user.username} xoa={xoa} xoabot={xoabot} themvagiohang={themvagiohang}/>
               <Search />
 
             </div>
