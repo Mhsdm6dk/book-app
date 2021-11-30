@@ -60,7 +60,7 @@ function Infosanpham(props){
         }
     }
 
-    return<div className="additem__form">
+    return<div className="additem__form" style={{top:"110px"}}>
         <h3>Thông tin sản phẩm</h3>
         <table>
         <tr>
