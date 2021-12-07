@@ -11,7 +11,9 @@ function App(props) {
   const [opengiohang,setOpengiohang]=useState(false);
     const user = useSelector(state=>state.user);
     useEffect(()=>{
-      setState(JSON.parse(window.localStorage.getItem('state')));
+      if(window.localStorage.getItem('state')!=null){
+        setState(JSON.parse(window.localStorage.getItem('state')));
+      }  
     },[])
     useEffect(()=>{
       window.localStorage.setItem('state',JSON.stringify(state));
